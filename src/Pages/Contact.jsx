@@ -2,26 +2,36 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-
+import Swal from 'sweetalert2';
 function Contact() {
   const form = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    emailjs
-      .sendForm('service_9emqzz2', 'template_9dfh8wn', form.current, 'MhYJRV2MCh6b7ubfd')
-      .then(
-        () => {
-          alert('Message sent successfully!');
-          e.target.reset();
-        },
-        (error) => {
-          alert('Failed to send message. Please try again later.');
-          console.error(error.text);
-        }
-      );
-  };
+  emailjs
+    .sendForm('service_9emqzz2', 'template_9dfh8wn', form.current, 'MhYJRV2MCh6b7ubfd')
+    .then(
+      () => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: 'Your message has been sent successfully.',
+          confirmButtonColor: '#3085d6',
+        });
+        e.target.reset();
+      },
+      (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Failed to send message. Please try again later.',
+          confirmButtonColor: '#d33',
+        });
+        
+      }
+    );
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0f172a] text-white px-4">
