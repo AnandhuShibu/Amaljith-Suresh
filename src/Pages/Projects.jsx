@@ -33,7 +33,7 @@ function Projects() {
           {/* Second project card */}
           <div className="bg-[#1e293b] p-6 rounded-xl shadow-md border border-gray-700 hover:border-blue-500 transition-all duration-200">
             <h3 className="text-xl font-semibold text-blue-300">Shadow – The Travel Partner</h3>
-            <p className="text-sm text-gray-400 mb-2 italic">Founder & Strategist</p>
+            <p className="text-sm text-gray-400 mb-2 italic">Co-Founder & Strategist</p>
             <p className="text-gray-300 leading-relaxed text-sm">
               A dedicated travel agency specializing in customized tours and seamless travel experiences, helping clients explore destinations with ease and personalized service.
             </p>
